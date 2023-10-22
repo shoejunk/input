@@ -1,4 +1,4 @@
-# template
+# input
 Generate project files by running:
 - "generate.bat"
 
