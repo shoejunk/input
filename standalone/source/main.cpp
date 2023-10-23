@@ -21,5 +21,10 @@ int main()
 	event.key.code = sf::Keyboard::Space;
 	input.on(event);
 	assert(input["space"_h] == false);
+	event.type = sf::Event::KeyPressed;
+	input.on(event);
+	assert(input["space"_h] == true);
+	input.reset();
+	assert(input["space"_h] == false);
 	return 0;
 }

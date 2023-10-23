@@ -50,6 +50,14 @@ namespace stk
 			return false;
 		}
 
+		void reset()
+		{
+			for (auto& [_, state] : m_state)
+			{
+				state = false;
+			}
+		}
+
 	private:
 		std::unordered_map<sf::Keyboard::Key, c_hash> m_keys;
 		std::unordered_map<c_hash, bool, s_hash_hasher> m_state;
