@@ -3,6 +3,7 @@ export module stk.input;
 import <SFML/Window.hpp>;
 import std.core;
 import stk.hash;
+import stk.math;
 
 namespace stk
 {
@@ -47,6 +48,11 @@ namespace stk
 				}
 				return false;
 			}
+			else if (event.type == sf::Event::MouseMoved)
+			{
+				m_mouse = { event.mouseMove.x, event.mouseMove.y };
+				return true;
+			}
 			return false;
 		}
 
@@ -58,8 +64,14 @@ namespace stk
 			}
 		}
 
+		c_vec2i mouse() const
+		{
+			return m_mouse;
+		}
+
 	private:
 		std::unordered_map<sf::Keyboard::Key, c_hash> m_keys;
 		std::unordered_map<c_hash, bool, s_hash_hasher> m_state;
+		c_vec2i m_mouse;
 	};
 }

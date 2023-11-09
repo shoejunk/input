@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(
 	input
-	VERSION 1.1.1
+	VERSION 1.2.0
 	LANGUAGES CXX)
 
 # ---- Fetch CPM ----
@@ -45,6 +45,13 @@ CPMAddPackage(
 	VERSION 6.0.1
 )
 
+# Add package: shoejunk/math
+CPMAddPackage(
+	NAME math
+	GITHUB_REPOSITORY shoejunk/math
+	VERSION 3.5.1
+)
+
 # ---- Add source files ----
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/source/*.ixx")
 
@@ -63,7 +70,7 @@ target_include_directories(
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
 )
 
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window hash)
+target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window hash math)
 
 # the location where the project's version header will be placed should match the project's regular
 # header paths
