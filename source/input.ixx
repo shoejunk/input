@@ -74,6 +74,11 @@ namespace stk
 				}
 				return false;
 			}
+			else if (event.type == sf::Event::MouseMoved)
+			{
+				m_mouse = { event.mouseMove.x, event.mouseMove.y };
+				return true;
+			}
 			return false;
 		}
 
