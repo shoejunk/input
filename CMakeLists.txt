@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(
 	input
-	VERSION 1.5.0
+	VERSION 1.5.1
 	LANGUAGES CXX)
 
 # ---- Fetch CPM ----
@@ -49,7 +49,7 @@ CPMAddPackage(
 CPMAddPackage(
 	NAME math
 	GITHUB_REPOSITORY shoejunk/math
-	VERSION 4.1.0
+	VERSION 4.1.1
 )
 
 # ---- Add source files ----
