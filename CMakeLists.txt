@@ -42,14 +42,16 @@ CPMAddPackage(
 CPMAddPackage(
 	NAME hash
 	GITHUB_REPOSITORY shoejunk/hash
-	VERSION 6.0.1
+	#VERSION 6.0.1
+	GIT_TAG main
 )
 
 # Add package: shoejunk/math
 CPMAddPackage(
 	NAME math
 	GITHUB_REPOSITORY shoejunk/math
-	VERSION 4.9.0
+	#VERSION 4.9.0
+	GIT_TAG main
 )
 
 # ---- Add source files ----
