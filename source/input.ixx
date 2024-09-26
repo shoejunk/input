@@ -1,7 +1,7 @@
 export module stk.input;
 
 import <SFML/Window.hpp>;
-import std.core;
+import std;
 import stk.hash;
 import stk.math;
 
