@@ -1,22 +1,22 @@
 export module stk.input;
 
-import <SFML/Window.hpp>;
 import std;
 import stk.hash;
 import stk.math;
+import stk.ui;
 
 namespace stk
 {
 	export class c_input
 	{
 	public:
-		void add(sf::Keyboard::Key key, c_hash action)
+		void add(Keyboard::Key key, c_hash action)
 		{
 			m_keys[key] = action;
 			m_state[action] = false;
 		}
 
-		void add(sf::Mouse::Button button, c_hash action)
+		void add(Mouse::Button button, c_hash action)
 		{
 			m_mouse_buttons[button] = action;
 			m_state[action] = false;
@@ -32,7 +32,7 @@ namespace stk
 			return false;
 		}
 
-		bool on(sf::Event const& event)
+		bool on(Event const& event)
 		{
 			if (event.type == sf::Event::KeyPressed)
 			{

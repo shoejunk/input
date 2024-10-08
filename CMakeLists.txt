@@ -71,6 +71,9 @@ target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
 )
+if(MSVC)
+    add_compile_options(/experimental:module /std:c++latest)
+endif()
 
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window hash math)
 
