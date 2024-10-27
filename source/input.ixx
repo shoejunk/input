@@ -1,6 +1,6 @@
 export module stk.input;
 
-import std;
+import se;
 import stk.hash;
 import stk.math;
 import stk.ui;
@@ -96,9 +96,9 @@ namespace stk
 		}
 
 	private:
-		std::unordered_map<sf::Keyboard::Key, c_hash> m_keys;
-		std::unordered_map<sf::Mouse::Button, c_hash> m_mouse_buttons;
-		std::unordered_map<c_hash, bool, s_hash_hasher> m_state;
+		se::unordered_map<sf::Keyboard::Key, c_hash> m_keys;
+		se::unordered_map<sf::Mouse::Button, c_hash> m_mouse_buttons;
+		se::unordered_map<c_hash, bool, s_hash_hasher> m_state;
 		c_vec2i m_mouse;
 	};
 }
